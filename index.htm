@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>0726_css3</title>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/jquery-ui.js"></script>
+<link href="js/jquery-ui.css" rel="stylesheet" type="text/css">
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+p{
+	font-size:36px;
+	color:#030303;}
+body{
+	background:#F6F6F6;}
+#div-main{
+	margin:0 auto;
+	
+	width:0;
+	height:0;}
+.shadow{
+	box-shadow:5px 5px 5px 5px #CCC;
+	}
+	/*animation:main ease-in-out 3s;background-color:#FFF;abox-shadow:5px 5px 5px 5px #CCC;;*/
+/*@keyframes main{
+	0{ background-color:#F6F6F6;color:#000;box-shadow:0px 0px 0px 0px #CCC;}
+	100%{ background-color:#FFF;color:#000;box-shadow:5px 5px 5px 5px #CCC;}
+	}
+-webkeit-@keyframes main{
+	0{ background-color:#FFF;}
+	50%{ background-color:#000;}
+	100%{ background-color:#FFF;}
+	}*/
+
+</style>
+</head>
+
+<body>
+
+<div id="div-main">
+
+</div>
+<script>
+
+		
+	
+
+	
+
+
+$(document).ready(function(e) {
+	var x=$(document).innerWidth();
+	var y=$(document).innerHeight();
+
+$("#div-main").animate({
+		width:x/10,
+		height:x/10,
+		backgroundColor:'#000',
+		marginTop:y/2-x/20,
+		borderRadius:x/10,
+		},2000);
+$("#div-main").animate({backgroundColor:'#F00'},1000);
+$("#div-main").animate({backgroundColor:'#0F0'},1000);
+$("#div-main").animate({backgroundColor:'#00F'},1000);
+$("#div-main").animate({backgroundColor:'#0FF'},1000);		
+		$("#div-main").delay(100).animate({
+		width:x*0.9,
+		height:y*0.9,
+		backgroundColor:'#0FF0F0',
+		marginTop:0.05*y,
+		borderRadius:x/100
+		},1000,function(){
+				$("#div-main").css({
+					
+					boxShadow:'2px 5px 5px 2px #CCC'
+					});
+			});
+	$(window).resize(function(){
+		var x=$(document).innerWidth();
+		var y=$(document).innerHeight();
+		$("#div-main").width(x*0.9);
+		$("#div-main").height(y*0.9);
+		})
+			
+
+});
+
+</script>
+</body>
+</html>
