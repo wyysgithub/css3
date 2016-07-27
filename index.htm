@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="gb2312">
-<title>0726_css3</title>
+<title>css3动画作品</title>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/jquery-ui.js"></script>
 <link href="js/jquery-ui.css" rel="stylesheet" type="text/css">
@@ -10,20 +10,55 @@
 *{
 	margin:0;
 	padding:0;
+	font-family:'Verdana, Geneva, sans-serif','微软雅黑';
 }
-p{
-	font-size:36px;
-	color:#030303;}
 body{
 	background:#F6F6F6;}
 #div-main{
+	position:relative;
 	margin:0 auto;
-	
 	width:0;
 	height:0;}
-.shadow{
-	box-shadow:5px 5px 5px 5px #CCC;
+#p-main{
+	margin:0 auto;
+	display:none;
+	color:#000;
+	font-weight:500;
+	text-align:center;
 	}
+#text-main,#pwd-main,#but-main,#tou-div{
+	margin:0 auto;
+	display:none;
+	margin:0 auto;
+	border:1px solid #CCC;
+	
+	}
+	#text-main,#pwd-main{
+		text-indent:1em;}
+#but-main{
+	background-color:#FF686C;
+	color:#FFF;
+	cursor:pointer;}
+#tou-div{
+background-color:#FF686C;
+}
+#copyright{
+	display:none;
+	position:absolute;
+	color:#999;
+	float:right;
+
+}
+#jb-div{
+	display:none;
+	margin:0 auto;
+	text-indent:2em;
+	background-color:#FFF;
+	border-radio:1px 1px 1px 1px #CCC;
+}
+#login{
+	margin:0 auto;}
+
 	/*animation:main ease-in-out 3s;background-color:#FFF;abox-shadow:5px 5px 5px 5px #CCC;;*/
 /*@keyframes main{
 	0{ background-color:#F6F6F6;color:#000;box-shadow:0px 0px 0px 0px #CCC;}
@@ -42,7 +77,25 @@ body{
 
 <div id="div-main">
 
+
+<div id="tou-div"><img src="tou.jpg"></div>
+<div id="jb-div">
+<p>姓名：正能猿</p>
+<p>性别：男</p>
+<p>年龄：21</p>
 </div>
+<div id="login">
+<input type="text" value="541907039" id="text-main" tabindex="1" >
+<input type="password" value="dsdsdsdsdds" id="pwd-main"  tabindex="2">
+<button id="but-main">LOGIN</button>
+</div>
+<p id="copyright">From WangYangYang </p>
+
+
+
+</div>
+
+	<p id="p-main">WELCOME</p>
 <script>
 
 		
@@ -61,32 +114,124 @@ $("#div-main").animate({
 		backgroundColor:'#000',
 		marginTop:y/2-x/20,
 		borderRadius:x/10,
-		},2000);
+		},2000,function(){
+			$("#p-main").fadeIn(2000)
+			$("#p-main").css({
+					fontSize:x/20
+				});
+			});
+
 $("#div-main").animate({backgroundColor:'#F00'},1000);
 $("#div-main").animate({backgroundColor:'#0F0'},1000);
 $("#div-main").animate({backgroundColor:'#00F'},1000);
-$("#div-main").animate({backgroundColor:'#0FF'},1000);		
+$("#div-main").animate({backgroundColor:'#0FF'},1000,
+							function(){
+										$("#p-main").fadeOut();
+										});		
 		$("#div-main").delay(100).animate({
 		width:x*0.9,
 		height:y*0.9,
 		backgroundColor:'#0FF0F0',
 		marginTop:0.05*y,
-		borderRadius:x/100
-		},1000,function(){
+		borderRadius:x/100,
+		paddingTop:0.05*y
+		},1000,function lasta(){
 				$("#div-main").css({
-					
 					boxShadow:'2px 5px 5px 2px #CCC'
 					});
+				$("#tou-div,#tou-div img").fadeIn().css({
+					
+					width:0.2*y,
+					height:0.2*y,
+					borderRadius:0.2*y
+					});
+				$("#login").css({
+					width:0.7*x,
+					
+					});
+				$("#text-main,#but-main,#pwd-main").fadeIn().css({
+					marginTop:0.05*y,
+					width:0.7*x,
+					height:0.08*y,
+					borderRadius:0.08*y,
+					fontSize:0.03*y
+					});
+				$("#copyright").fadeIn().css({
+					bottom:0.02*y,
+					right:0.02*x,
+					fontSize:0.01*y
+					})
+				
 			});
 	$(window).resize(function(){
 		var x=$(document).innerWidth();
 		var y=$(document).innerHeight();
-		$("#div-main").width(x*0.9);
-		$("#div-main").height(y*0.9);
+		$("#div-main").css({
+		width:x*0.9,
+		height:y*0.9,
+		marginTop:0.05*y,
+		borderRadius:x/100,
+		paddingTop:0.05*y
+		});
+	
+				$("#tou-div,#tou-div img").css({
+					
+					width:0.2*y,
+					height:0.2*y,
+					borderRadius:0.2*y
+					});
+				$("#login").css({
+					width:0.7*x,
+					
+					});
+				$("#text-main,#but-main,#pwd-main").css({
+					marginTop:0.05*y,
+					width:0.7*x,
+					height:0.08*y,
+					borderRadius:0.08*y,
+					fontSize:0.03*y
+					});
+				$("#copyright").css({
+					bottom:0.02*y,
+					right:0.02*x,
+					fontSize:0.01*y
+					})
 		})
 			
 
 });
+$("#but-main").click(function(){
+		var x=$(document).innerWidth();
+		var y=$(document).innerHeight();
+		$("#login").slideUp(1000,function(){
+			$("#jb-div").css({
+			marginTop:0.5*y,
+			paddingTop:0.05*y,
+			fontSize:0.02*y
+			}).fadeIn().animate({
+			marginTop:0.05*y
+			},1000);
+		$("#jb-div").css({
+			width:x*0.8,
+			height:y*0.5,
+			borderRadius:0.01*y
+			});
+			});
+	$("#div-main").animate({
+		width:x,
+		height:y,
+		marginTop:0,
+		borderRadius:0
+		});
+	$("#tou-div,#tou-div img").animate({
+					
+					width:0.18*y,
+					height:0.18*y,
+					borderRadius:0.18*y
+					});
+		
+	
+	});
 
 </script>
 </body>
