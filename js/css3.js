@@ -135,13 +135,13 @@ $(window).resize(function(){  //当浏览器窗口被调整时
 						
 				$("#jb-div p").css({
 		paddingTop:0.02*x,
-		fontSize:0.03*x
+		fontSize:0.02*y
 		});
 			$("#jb-div").css({
 			marginRight:0.1*x,
 			marginTop:0.1*y,
 			width:x*0.8,
-			height:y*0.5,
+			height:y*0.6,
 			borderRadius:0.01*y
 			});		
 						}
@@ -188,7 +188,7 @@ function jibenSd(){
 			$("#jb-div").css({
 			marginTop:0.5*y,
 			width:x*0.8,
-			height:y*0.5,
+			height:y*0.6,
 			borderRadius:0.01*y
 			}).fadeIn().animate({
 			marginTop:0.1*y
@@ -196,7 +196,7 @@ function jibenSd(){
 			});
 	$("#jb-div p").css({
 		paddingTop:0.02*x,
-		fontSize:0.03*x
+		fontSize:0.02*y
 		});
 	$(".jb-img").css({
 		top:0.3*y+0.02*x,
@@ -226,13 +226,13 @@ function jibenUp(){
 	maxJb=true;
 		$("#jb-div p").css({
 		paddingTop:0.02*x,
-		fontSize:0.03*x
+		fontSize:0.02*y
 		}).fadeIn(1500);
 			$("#jb-div").animate({
 			marginRight:0.1*x,
 			marginTop:0.1*y 	,
 			width:x*0.8,
-			height:y*0.5,
+			height:y*0.6,
 			borderRadius:0.01*y
 			},1000);
 	}

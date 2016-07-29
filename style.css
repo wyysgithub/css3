@@ -59,11 +59,11 @@ background-color:#FF686C;
 	cursor:pointer;}
 .jb-img img{
 	width:100%;
-	transition:0.5s ease-in-out all;
-	-webkit-transition:0.5s ease-in-out all;
-	-ms-transition:0.5s ease-in-out all;
-	-moz-transition:0.5s ease-in-out all;
-	-o-transition:0.5s ease-in-out all;}
+	transition:1s ease-in-out all;
+	-webkit-transition:1s ease-in-out all;
+	-ms-transition:1s ease-in-out all;
+	-moz-transition:1s ease-in-out all;
+	-o-transition:1s ease-in-out all;}
 #login{
 	display:none;
 	margin:0 auto;}
@@ -71,11 +71,11 @@ background-color:#FF686C;
 	
 	
 	
-	transform:rotate(45deg);
-	-webkit-transform:rotate(45deg);
-	-ms-transform:rotate(45deg);
-	-o-transform:rotate(45deg);
-	-moz-transform:rotate(45deg);}
+	transform:rotate(405deg);
+	-webkit-transform:rotate(405deg);
+	-ms-transform:rotate(405deg);
+	-o-transform:rotate(405deg);
+	-moz-transform:rotate(405deg);}
 
 	/*animation:main ease-in-out 3s;background-color:#FFF;abox-shadow:5px 5px 5px 5px #CCC;;*/
 /*@keyframes main{
