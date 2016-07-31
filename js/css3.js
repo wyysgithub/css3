@@ -152,6 +152,7 @@ $(document).on('click','#but-login',function(){        //鼠标点击事件
 	maxB=true;                            //返回maxB为true
 		var x=getX();
 		var y=getY();
+		$('#div-main').css('background-image','url(img/bg.jpg)');
 		maxBg();
 		jibenSd();
 		$("#jb-div").css({
@@ -159,7 +160,7 @@ $(document).on('click','#but-login',function(){        //鼠标点击事件
 			paddingRight:0.02*x});
 
 	});
-$(document).on('click','.jb-img',function(){
+$(document).on('click','.jb-img',function(){         //鼠标点击事件：收起或者展开基本信息面板
 	var x=getX();
 		var y=getY();
 	$(".jb-img img").toggleClass('rotate');
@@ -168,8 +169,10 @@ $("#jb-div").css({
 			paddingRight:0});
 	if(maxJb){
 	jibenDn();
+	ul_up();
 		}else{
 		jibenUp();
+		ul_down();
 			}
 	
 	
@@ -230,7 +233,7 @@ function jibenUp(){
 		}).fadeIn(1500);
 			$("#jb-div").animate({
 			marginRight:0.1*x,
-			marginTop:0.1*y 	,
+			marginTop:0.1*y,
 			width:x*0.8,
 			height:y*0.6,
 			borderRadius:0.01*y
@@ -244,4 +247,10 @@ function imgJb(){
 		width:0.1*x,
 		height:0.1*x
 		});
+	}
+function ul_up(){
+	$("#ul-div").fadeIn();
+	}
+function ul_down(){
+	$("#ul-div").fadeOut();
 	}

@@ -8,10 +8,17 @@
 body{
 	background:#F6F6F6;}
 #div-main{
+	background-size: 100%;
 	position:relative;
 	margin:0 auto;
 	width:0;
 	height:0;}
+/*.bg{
+	position:absolute;
+	display:none;
+	width:100%;
+	height:100%;
+	z-index:-1;}*/
 #p-main{
 	margin:0 auto;
 	display:none;
@@ -33,8 +40,8 @@ body{
 #tou-div{
 	position:relative;
 	margin:0 auto;
-	border:1px solid #CCC;
 	display:none;
+
 background-color:#FF686C;
 }
 #copyright{
@@ -87,4 +94,38 @@ background-color:#FF686C;
 	50%{ background-color:#000;}
 	100%{ background-color:#FFF;}
 	}*/
+#ul-div{
+	top:30%;
+	left:10%;
+	position:absolute;
+	display:none;
+	width:50%;
+	height:60%;
+	}
 
+/*#ul-img{
+	float:left;
+	width:18%;
+	height:100%;
+	list-style:none;
+	}
+#ul-img li{
+	height:15%;
+	width:100%;
+	}
+#ul-img li div{
+	margin-left:40%;
+	margin-top:20%;
+	width:50%;
+	height:50%;
+	background-color:#FFF;
+	border-radius:50%;}*/
+#ul-con{
+	float:left;
+	width:100%;
+	height:100%;
+	list-style:none;}
+#ul-con li{
+	height:18%;
+	width:100%;
+	border-bottom:#FFF solid 1px;}
